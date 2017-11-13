@@ -1,0 +1,8 @@
+*.bak
+vhdl_book.cr.mti
+vhdl_book.mpf
+vsim.wlf
+work/*
+transcript
+vhdl_book_mv.cr.mti
+vhdl_book_mv.mpf
