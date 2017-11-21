@@ -25,6 +25,7 @@ UEBERGANG: process (CLK, RESET)
 
 FOLGEZUSTANDSBERECHNUNG: process(E, ZUSTAND)
 begin
+	FOLGEZUSTAND <= Z0 after 20 ps;
 	case ZUSTAND is
 		when Z0 =>	if E = "01" then FOLGEZUSTAND <= Z1  after 20 ps;
 					end if;
