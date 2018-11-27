@@ -13,6 +13,7 @@ architecture SEQUENZ of FSM_3P_OL is
 type ZUSTAENDE is (Z0, Z1, Z2, Z3);
 signal ZUSTAND, FOLGE_Z: ZUSTAENDE;
 signal E_S: bit_vector(1 downto 0);
+signal E_AS: bit_vector(1 downto 0);
 begin
 SYNC_A:
     process (CLK, RESET)
@@ -21,7 +22,8 @@ SYNC_A:
         E_S <= (others => '0');
         A <= '0';
     elsif CLK = '1' and CLK'event then
-        E_S <= E;
+      --E_S <= E;
+	E_S <= E_AS;
         A <= '0';
         case FOLGE_Z is
             when Z3 =>      A <= '1';
@@ -56,4 +58,13 @@ process(E_S, ZUSTAND)
             end if;
     end case;
     end process UE_AUS_SN;
+	
+ABLAUF: process
+	begin
+	E_AS <= "00"; wait for 100 ps;
+	E_AS <= "01"; wait for 100 ps;
+	E_AS <= "11"; wait for 100 ps;
+	E_AS <= "10"; wait for 100 ps;
+	E_AS <= "00"; wait for 200 ps;
+	end process ABLAUF;
 end SEQUENZ;

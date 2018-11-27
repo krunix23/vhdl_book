@@ -51,3 +51,4 @@ begin
 	end case;
 	end process UE_AUS_SN;
 end SEQUENZ;
+	
