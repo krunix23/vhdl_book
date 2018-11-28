@@ -20,7 +20,6 @@ component OR_V
 			A		: out bit );
 end component;
 
-
 -- Konfiguration:
 for I_0: AND_V use entity WORK.AND_V(UND_V);
 for all: OR_V use entity WORK.OR_V(ODER_V);
