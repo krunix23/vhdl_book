@@ -5,17 +5,18 @@ entity PARGEN8 is
 end PARGEN8;
 
 architecture VERHALTEN of PARGEN8 is
-function PARGEN(AVECT : bit_vetctor) return bit is
+function PARGEN(AVECT : bit_vector) return bit is
 variable PU_VAR: bit;
-begin
+begin -- der Funktion
     PU_VAR := '1';
     for I in AVECT'range loop
         if AVECT(I) = '1' then
             PU_VAR := not PU_VAR;
-            endif
+         end if;
     end loop;
     return PU_VAR;
-end PARGEN;
+end PARGEN; -- der Funktion
+begin -- der Architektur
     PUA <= PARGEN(A);
     PUB <= PARGEN(B);
 end VERHALTEN;
