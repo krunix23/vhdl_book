@@ -5,6 +5,7 @@ entity PARGEN8 is
 end PARGEN8;
 
 architecture VERHALTEN of PARGEN8 is
+
 function PARGEN(AVECT : bit_vector) return bit is
 variable PU_VAR: bit;
 begin -- der Funktion
@@ -16,6 +17,7 @@ begin -- der Funktion
     end loop;
     return PU_VAR;
 end PARGEN; -- der Funktion
+
 begin -- der Architektur
     PUA <= PARGEN(A);
     PUB <= PARGEN(B);
