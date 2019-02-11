@@ -27,7 +27,7 @@ AVALON_IF: process (reset_n, clk)  -- Process to manage interaction between Aval
 begin
 	if ( reset_n = '0' ) then
 		avs_s1_readdata <= (others => '0');
-		REGDATA <= (others => '0');
+		REGDATA <= x"00000004";
 
 	elsif ( clk='1' and clk'event ) then
 		if ( avs_s1_read_n = '0' and avs_s1_chipselect = '1' and avs_s1_address = b"0" ) then      -- Avalon Read Temperature
